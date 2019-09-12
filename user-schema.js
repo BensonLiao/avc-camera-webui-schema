@@ -1,0 +1,68 @@
+module.exports = {
+  account: {
+    optional: false,
+    type: 'string',
+    empty: false,
+    max: 8
+  },
+  birthday: {
+    optional: false,
+    type: 'custom',
+    pattern: /^\d{4}[0-1]\d[0-3]\d$/,
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (!schema.pattern.test(value)) {
+        return this.makeError('birthday', schema.pattern, value);
+      }
+
+      return true;
+    }
+  },
+  password: {
+    optional: false,
+    type: 'custom',
+    min: 6,
+    max: 32,
+    isNeedLowerCase: true,
+    isNeedUpperCase: true,
+    isNeedNumber: true,
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (value.length < schema.min) {
+        return this.makeError('stringMin', schema.min, value);
+      }
+
+      if (value.length > schema.max) {
+        return this.makeError('stringMax', schema.max, value);
+      }
+
+      if (schema.isNeedLowerCase && !/[a-z]+/.test(value)) {
+        return this.makeError('stringContainsLowerCaseLatter', null, value);
+      }
+
+      if (schema.isNeedUpperCase && !/[A-Z]+/.test(value)) {
+        return this.makeError('stringContainsUpperCaseLatter', null, value);
+      }
+
+      if (schema.isNeedNumber && !/\d+/.test(value)) {
+        return this.makeError('stringContainsNumber', null, value);
+      }
+
+      return true;
+    }
+  }
+};
