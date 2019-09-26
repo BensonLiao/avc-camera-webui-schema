@@ -46,5 +46,12 @@ module.exports = {
       '1/4000',
       '1/8000'
     ]
+  },
+  iris: {
+    // 自動光圈
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: ['auto', 'max']
   }
 };
