@@ -1,5 +1,29 @@
 module.exports = {
-  shutterSpeed: {
+  defog: { // 除霧
+    type: 'boolean'
+  },
+  irLight: { // 紅外線燈
+    type: 'boolean'
+  },
+  bright: { // 亮度
+    type: 'number',
+    min: 0,
+    max: 50,
+    integer: true
+  },
+  contrast: { // 對比
+    type: 'number',
+    min: 0,
+    max: 50,
+    integer: true
+  },
+  wdr: { // HDR
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: ['auto', 'off']
+  },
+  shutterSpeed: { // 快門速度
     optional: false,
     type: 'string',
     empty: false,
