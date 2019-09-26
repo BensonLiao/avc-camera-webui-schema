@@ -7,6 +7,7 @@ module.exports = {
     // 紅外線燈
     type: 'boolean'
   },
+
   bright: {
     // 亮度
     type: 'number',
@@ -53,5 +54,33 @@ module.exports = {
     type: 'string',
     empty: false,
     enum: ['auto', 'max']
+  },
+
+  saturation: {
+    // 飽和度
+    type: 'number',
+    min: 0,
+    max: 50,
+    integer: true
+  },
+  whiteBalance: {
+    // 白平衡
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: [
+      'auto',
+      'outdoor', // 戶外
+      'fluorescent', // 日光燈
+      'incandescent', // 白熱燈泡
+      'manual' // 手動調整
+    ]
+  },
+  whiteBalanceSensitivity: {
+    // 白平衡-色溫
+    type: 'number',
+    min: 0,
+    max: 50,
+    integer: true
   }
 };
