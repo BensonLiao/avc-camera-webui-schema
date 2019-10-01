@@ -10,6 +10,7 @@ module.exports = {
 
   bright: {
     // 亮度
+    optional: false,
     type: 'number',
     min: 0,
     max: 50,
@@ -17,6 +18,7 @@ module.exports = {
   },
   contrast: {
     // 對比
+    optional: false,
     type: 'number',
     min: 0,
     max: 50,
@@ -58,6 +60,7 @@ module.exports = {
 
   saturation: {
     // 飽和度
+    optional: false,
     type: 'number',
     min: 0,
     max: 50,
@@ -78,9 +81,44 @@ module.exports = {
   },
   whiteBalanceSensitivity: {
     // 白平衡-色溫
+    optional: false,
     type: 'number',
     min: 0,
     max: 50,
     integer: true
+  },
+  dn: {
+    // 日夜模式
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: [
+      'auto',
+      'day',
+      'night',
+      'manual' // 指定時間
+    ]
+  },
+  dnSensitivity: {
+    // 日夜模式-自動
+    optional: false,
+    type: 'number',
+    min: 0,
+    max: 5,
+    integer: true
+  },
+  dnStartHour: {
+    // 日夜模式-指定時間
+    optional: false,
+    type: 'number',
+    min: 0,
+    max: 24
+  },
+  dnEndHour: {
+    // 日夜模式-指定時間
+    optional: false,
+    type: 'number',
+    min: 0,
+    max: 24
   }
 };
