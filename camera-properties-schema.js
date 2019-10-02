@@ -88,7 +88,7 @@ module.exports = {
     integer: true
   },
   dn: {
-    // 日夜模式
+    // 黑白模式
     optional: false,
     type: 'string',
     empty: false,
@@ -100,7 +100,7 @@ module.exports = {
     ]
   },
   dnSensitivity: {
-    // 日夜模式-自動
+    // 黑白模式-自動
     optional: false,
     type: 'number',
     min: 0,
@@ -108,17 +108,49 @@ module.exports = {
     integer: true
   },
   dnStartHour: {
-    // 日夜模式-指定時間
+    // 黑白模式-指定時間
     optional: false,
     type: 'number',
     min: 0,
     max: 24
   },
   dnEndHour: {
-    // 日夜模式-指定時間
+    // 黑白模式-指定時間
     optional: false,
     type: 'number',
     min: 0,
     max: 24
+  },
+
+  sharpness: {
+    // 銳利度
+    optional: false,
+    type: 'number',
+    min: 0,
+    max: 50,
+    integer: true
+  },
+  orientation: {
+    // 影像方向
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: [
+      'off', // 正常
+      'flip-v', // 垂直翻轉
+      'flip-h', // 水平翻轉
+      'flip-vh' // 180 度翻轉
+    ]
+  },
+  flickerLess: {
+    // 刷新頻率
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: [
+      'auto',
+      '50Hz',
+      '60Hz'
+    ]
   }
 };
