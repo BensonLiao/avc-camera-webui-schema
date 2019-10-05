@@ -28,8 +28,8 @@ module.exports = {
   password: {
     optional: false,
     type: 'custom',
-    min: 6,
-    max: 32,
+    min: 8,
+    max: 12,
     isNeedLowerCase: true,
     isNeedUpperCase: true,
     isNeedNumber: true,
