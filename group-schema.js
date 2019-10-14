@@ -13,7 +13,7 @@ module.exports = {
   note: {
     optional: true,
     type: 'string',
-    enpty: true,
+    empty: true,
     max: 1024
   }
 };
