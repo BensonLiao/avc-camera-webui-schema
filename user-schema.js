@@ -3,10 +3,9 @@ const UserPermission = require('./constants/user-permission');
 module.exports = {
   permission: {
     optional: false,
-    type: 'number',
-    min: UserPermission.root,
-    max: UserPermission.guest,
-    integer: true
+    type: 'string',
+    empty: false,
+    enum: UserPermission.all().map(x => `${x}`)
   },
   account: {
     optional: false,

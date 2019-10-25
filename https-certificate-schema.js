@@ -4,10 +4,9 @@ const {validator} = require('.');
 module.exports = {
   certificateType: {
     optional: false,
-    type: 'number',
-    min: CertificateType.selfSigned,
-    max: CertificateType.generateCertificate,
-    integer: true
+    type: 'string',
+    empty: false,
+    enum: CertificateType.all().map(x => `${x}`)
   },
 
   certificate: {
