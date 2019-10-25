@@ -1,4 +1,13 @@
+const UserPermission = require('./constants/user-permission');
+
 module.exports = {
+  permission: {
+    optional: false,
+    type: 'number',
+    min: UserPermission.root,
+    max: UserPermission.guest,
+    integer: true
+  },
   account: {
     optional: false,
     type: 'string',
