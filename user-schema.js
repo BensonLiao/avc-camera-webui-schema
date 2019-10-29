@@ -5,7 +5,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: UserPermission.all().map(x => `${x}`)
+    enum: UserPermission.all()
   },
   account: {
     optional: false,

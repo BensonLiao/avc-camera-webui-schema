@@ -6,7 +6,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: CertificateType.all().map(x => `${x}`)
+    enum: CertificateType.all()
   },
 
   certificate: {
