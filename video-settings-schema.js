@@ -1,6 +1,6 @@
 const ShutterSpeed = require('./constants/shutter-speed');
 const ApertureType = require('./constants/aperture-type');
-const WhiteblanceType = require('./constants/whiteblance-type');
+const WhiteBalanceType = require('./constants/white-balance-type');
 const DaynightType = require('./constants/daynight-type');
 const OrientationType = require('./constants/orientation-type');
 const RefreshRate = require('./constants/refresh-rate');
@@ -66,7 +66,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: WhiteblanceType.all()
+    enum: WhiteBalanceType.all()
   },
   whiteblanceManual: {
     // 白平衡-色溫
