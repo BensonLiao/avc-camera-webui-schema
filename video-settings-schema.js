@@ -1,19 +1,26 @@
+const ShutterSpeed = require('./constants/shutter-speed');
+const ApertureType = require('./constants/aperture-type');
+const WhiteblanceType = require('./constants/whiteblance-type');
+const DaynightType = require('./constants/daynight-type');
+const OrientationType = require('./constants/orientation-type');
+const RefreshRate = require('./constants/refresh-rate');
+
 module.exports = {
-  defog: {
+  defoggingEnabled: {
     // 除霧
     type: 'boolean'
   },
-  irLight: {
+  irEnabled: {
     // 紅外線燈
     type: 'boolean'
   },
 
-  bright: {
+  brightness: {
     // 亮度
     optional: false,
     type: 'number',
     min: 0,
-    max: 50,
+    max: 10,
     integer: true
   },
   contrast: {
@@ -21,41 +28,29 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 50,
+    max: 10,
     integer: true
   },
-  wdr: {
+  hdrEnabled: {
     // HDR
     optional: false,
     type: 'string',
     empty: false,
-    enum: ['auto', 'off']
+    enum: ['false', 'true']
   },
   shutterSpeed: {
     // 快門速度
     optional: false,
     type: 'string',
     empty: false,
-    enum: [
-      'auto',
-      '1/30',
-      '1/50',
-      '1/60',
-      '1/100',
-      '1/125',
-      '1/500',
-      '1/1000',
-      '1/2000',
-      '1/4000',
-      '1/8000'
-    ]
+    enum: ShutterSpeed.all()
   },
-  iris: {
+  aperture: {
     // 自動光圈
     optional: false,
     type: 'string',
     empty: false,
-    enum: ['auto', 'max']
+    enum: ApertureType.all()
   },
 
   saturation: {
@@ -66,20 +61,14 @@ module.exports = {
     max: 50,
     integer: true
   },
-  whiteBalance: {
+  whiteblanceMode: {
     // 白平衡
     optional: false,
     type: 'string',
     empty: false,
-    enum: [
-      'auto',
-      'outdoor', // 戶外
-      'fluorescent', // 日光燈
-      'incandescent', // 白熱燈泡
-      'manual' // 手動調整
-    ]
+    enum: WhiteblanceType.all()
   },
-  whiteBalanceSensitivity: {
+  whiteblanceManual: {
     // 白平衡-色溫
     optional: false,
     type: 'number',
@@ -87,19 +76,14 @@ module.exports = {
     max: 50,
     integer: true
   },
-  dn: {
+  daynightMode: {
     // 黑白模式
     optional: false,
     type: 'string',
     empty: false,
-    enum: [
-      'auto',
-      'day',
-      'night',
-      'manual' // 指定時間
-    ]
+    enum: DaynightType.all()
   },
-  dnSensitivity: {
+  sensitivity: {
     // 黑白模式-自動
     optional: false,
     type: 'number',
@@ -107,14 +91,14 @@ module.exports = {
     max: 5,
     integer: true
   },
-  dnStartHour: {
+  timePeriodStart: {
     // 黑白模式-指定時間
     optional: false,
     type: 'number',
     min: 0,
     max: 24
   },
-  dnEndHour: {
+  timePeriodEnd: {
     // 黑白模式-指定時間
     optional: false,
     type: 'number',
@@ -135,22 +119,13 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: [
-      'off', // 正常
-      'flip-v', // 垂直翻轉
-      'flip-h', // 水平翻轉
-      'flip-vh' // 180 度翻轉
-    ]
+    enum: OrientationType.all()
   },
-  flickerLess: {
+  refreshRate: {
     // 刷新頻率
     optional: false,
     type: 'string',
     empty: false,
-    enum: [
-      'auto',
-      '50Hz',
-      '60Hz'
-    ]
+    enum: RefreshRate.all()
   }
 };
