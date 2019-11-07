@@ -46,30 +46,30 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 64
   },
   city: {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 64
   },
   organization: {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 64
   },
   organizationUnit: {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 64
   },
   email: {
     optional: false,
     type: 'custom',
-    max: 1024,
+    max: 64,
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
         return true;
@@ -90,6 +90,6 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 64
   }
 };
