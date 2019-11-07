@@ -8,13 +8,13 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 128
   },
   organization: {
     optional: true,
     type: 'string',
     empty: true,
-    max: 1024
+    max: 128
   },
   group: {
     optional: true,
@@ -25,6 +25,6 @@ module.exports = {
     optional: true,
     type: 'string',
     empty: true,
-    max: 1024
+    max: 128
   }
 };
