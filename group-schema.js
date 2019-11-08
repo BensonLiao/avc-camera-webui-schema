@@ -1,8 +1,9 @@
 module.exports = {
   id: {
     optional: false,
-    type: 'number',
-    integer: true
+    type: 'string',
+    empty: false,
+    pattern: /^[a-f0-9-]{36}$/
   },
   name: {
     optional: false,
