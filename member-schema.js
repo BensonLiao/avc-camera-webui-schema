@@ -19,13 +19,27 @@ module.exports = {
   },
   group: {
     optional: true,
-    type: 'number',
-    integer: true
+    type: 'string',
+    empty: true,
+    pattern: /^([a-f0-9-]{36})?$/
   },
   note: {
     optional: true,
     type: 'string',
     empty: true,
     max: 128
+  },
+  pictures: {
+    optional: false,
+    type: 'array',
+    empty: false,
+    min: 1,
+    max: 1,
+    items: {
+      optional: false,
+      type: 'string',
+      empty: false,
+      max: 1048576 // 1MB = 1024 * 1024 = 1048576 bytes
+    }
   }
 };
