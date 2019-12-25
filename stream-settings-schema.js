@@ -3,7 +3,7 @@ const StreamResolution = require('./constants/stream-resolution');
 const StreamVBRBitRateLevel = require('./constants/stream-vbr-bit-rate-level');
 const StreamVBRMaxBitRate = require('./constants/stream-vbr-max-bit-rate');
 const StreamCBRBitRate = require('./constants/stream-cbr-bit-rate');
-const StreamGOP = require('./constants/stream-gop');
+const StreamGOV = require('./constants/stream-gov');
 const StreamBandwidthManagement = require('./constants/stream-bandwidth-management');
 
 const settingsSchema = {
@@ -68,11 +68,11 @@ const settingsSchema = {
     empty: false,
     enum: StreamCBRBitRate.all()
   },
-  gop: {
+  gov: {
     optional: false,
     type: 'string',
     empty: false,
-    enum: StreamGOP.all()
+    enum: StreamGOV.all()
   },
   bandwidthManagement: {
     optional: false,
