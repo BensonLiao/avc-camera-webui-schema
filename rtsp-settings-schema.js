@@ -1,9 +1,9 @@
 module.exports = {
-  isEnabledAudioToStream: {
+  isEnableAudioToStream: {
     // 將聲音記錄至串流除霧
     type: 'boolean'
   },
-  isEnabledPassword: {
+  isEnablePassword: {
     // 連線時需帳號密碼認證
     type: 'boolean'
   },
