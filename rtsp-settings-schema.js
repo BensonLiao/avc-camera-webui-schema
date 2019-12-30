@@ -1,0 +1,34 @@
+module.exports = {
+  isEnabledAudioToStream: {
+    // 將聲音記錄至串流除霧
+    type: 'boolean'
+  },
+  isEnabledPassword: {
+    // 連線時需帳號密碼認證
+    type: 'boolean'
+  },
+  tcpPort: {
+    // RTSP/TCP 連接埠
+    optional: false,
+    type: 'number',
+    min: 1024,
+    max: 65535,
+    integer: true
+  },
+  udpPort: {
+    // RTSP/UDP 連接埠
+    optional: false,
+    type: 'number',
+    min: 1024,
+    max: 65535,
+    integer: true
+  },
+  connectionLimit: {
+    // 最大連接數
+    optional: false,
+    type: 'number',
+    min: 1,
+    max: 8,
+    integer: true
+  }
+};
