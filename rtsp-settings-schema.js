@@ -10,25 +10,97 @@ module.exports = {
   tcpPort: {
     // RTSP/TCP 連接埠
     optional: false,
-    type: 'number',
+    type: 'custom',
+    pattern: /^[\d]{4,5}$/,
     min: 1024,
     max: 65535,
-    integer: true
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (!schema.pattern.test(value)) {
+        return this.makeError('stringPattern', schema.pattern, value);
+      }
+
+      const frameRate = Number(value);
+      if (frameRate < schema.min) {
+        return this.makeError('numberMin', schema.min, value);
+      }
+
+      if (frameRate > schema.max) {
+        return this.makeError('numberMax', schema.min, value);
+      }
+
+      return true;
+    }
   },
   udpPort: {
     // RTSP/UDP 連接埠
     optional: false,
-    type: 'number',
+    type: 'custom',
+    pattern: /^[\d]{4,5}$/,
     min: 1024,
     max: 65535,
-    integer: true
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (!schema.pattern.test(value)) {
+        return this.makeError('stringPattern', schema.pattern, value);
+      }
+
+      const frameRate = Number(value);
+      if (frameRate < schema.min) {
+        return this.makeError('numberMin', schema.min, value);
+      }
+
+      if (frameRate > schema.max) {
+        return this.makeError('numberMax', schema.min, value);
+      }
+
+      return true;
+    }
   },
   connectionLimit: {
     // 最大連接數
     optional: false,
-    type: 'number',
+    type: 'custom',
+    pattern: /^\d$/,
     min: 1,
     max: 8,
-    integer: true
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (!schema.pattern.test(value)) {
+        return this.makeError('stringPattern', schema.pattern, value);
+      }
+
+      const frameRate = Number(value);
+      if (frameRate < schema.min) {
+        return this.makeError('numberMin', schema.min, value);
+      }
+
+      if (frameRate > schema.max) {
+        return this.makeError('numberMax', schema.min, value);
+      }
+
+      return true;
+    }
   }
 };
