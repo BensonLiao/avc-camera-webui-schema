@@ -44,7 +44,7 @@ const settingsSchema = {
       }
 
       if (frameRate > schema.max) {
-        return this.makeError('numberMax', schema.min, value);
+        return this.makeError('numberMax', schema.max, value);
       }
 
       return true;
