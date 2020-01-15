@@ -19,16 +19,16 @@ module.exports = {
     // 亮度
     optional: false,
     type: 'number',
-    min: 0,
-    max: 10,
+    min: -12,
+    max: 12,
     integer: true
   },
   contrast: {
     // 對比
     optional: false,
     type: 'number',
-    min: 0,
-    max: 10,
+    min: 1,
+    max: 11,
     integer: true
   },
   hdrEnabled: {
@@ -58,7 +58,7 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 50,
+    max: 6,
     integer: true
   },
   whiteblanceMode: {
@@ -72,8 +72,8 @@ module.exports = {
     // 白平衡-色溫
     optional: false,
     type: 'number',
-    min: 0,
-    max: 50,
+    min: 3000,
+    max: 8000,
     integer: true
   },
   daynightMode: {
@@ -111,7 +111,7 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 50,
+    max: 10,
     integer: true
   },
   orientation: {
