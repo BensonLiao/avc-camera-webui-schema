@@ -5,7 +5,7 @@ module.exports = {
   maskAreas: {
     optional: false,
     type: 'array',
-    empty: false,
+    empty: true,
     min: 0,
     max: 4,
     items: {
