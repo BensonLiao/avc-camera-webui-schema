@@ -1,21 +1,21 @@
 module.exports = {
   deviceToken: {
     // 裝置金鑰
-    optional: false,
+    optional: true,
     type: 'string',
-    empty: false,
+    empty: true,
     max: 1024
   },
   deviceId: {
     // 裝置編碼
-    optional: false,
+    optional: true,
     type: 'string',
-    empty: false,
+    empty: true,
     max: 1024
   },
   interval: {
     // 通知時間間隔
-    optional: false,
+    optional: true,
     type: 'custom',
     pattern: /^[\d]{1,4}$/,
     min: 5,
