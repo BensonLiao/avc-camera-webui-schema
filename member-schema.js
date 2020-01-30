@@ -9,13 +9,13 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 128
+    max: 16
   },
   organization: {
     optional: true,
     type: 'string',
     empty: true,
-    max: 128
+    max: 32
   },
   group: {
     optional: true,
@@ -27,7 +27,7 @@ module.exports = {
     optional: true,
     type: 'string',
     empty: true,
-    max: 128
+    max: 256
   },
   pictures: {
     optional: false,
