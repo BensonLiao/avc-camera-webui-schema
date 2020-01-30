@@ -58,7 +58,7 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 6,
+    max: 10,
     integer: true
   },
   whiteblanceMode: {
@@ -111,7 +111,7 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 10,
+    max: 6,
     integer: true
   },
   orientation: {
