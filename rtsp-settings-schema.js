@@ -27,12 +27,12 @@ module.exports = {
         return this.makeError('stringPattern', schema.pattern, value);
       }
 
-      const frameRate = Number(value);
-      if (frameRate < schema.min) {
+      const number = Number(value);
+      if (number < schema.min) {
         return this.makeError('numberMin', schema.min, value);
       }
 
-      if (frameRate > schema.max) {
+      if (number > schema.max) {
         return this.makeError('numberMax', schema.max, value);
       }
 
@@ -59,12 +59,12 @@ module.exports = {
         return this.makeError('stringPattern', schema.pattern, value);
       }
 
-      const frameRate = Number(value);
-      if (frameRate < schema.min) {
+      const number = Number(value);
+      if (number < schema.min) {
         return this.makeError('numberMin', schema.min, value);
       }
 
-      if (frameRate > schema.max) {
+      if (number > schema.max) {
         return this.makeError('numberMax', schema.max, value);
       }
 
@@ -91,12 +91,12 @@ module.exports = {
         return this.makeError('stringPattern', schema.pattern, value);
       }
 
-      const frameRate = Number(value);
-      if (frameRate < schema.min) {
+      const number = Number(value);
+      if (number < schema.min) {
         return this.makeError('numberMin', schema.min, value);
       }
 
-      if (frameRate > schema.max) {
+      if (number > schema.max) {
         return this.makeError('numberMax', schema.max, value);
       }
 
