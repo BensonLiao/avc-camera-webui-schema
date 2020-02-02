@@ -23,7 +23,7 @@ module.exports = {
   pulse: {
     // 訊號緩衝時間 (秒)
     optional: true,
-    type: 'string',
+    type: 'custom',
     pattern: /^[\d]{1,2}$/,
     min: 1,
     max: 80,
@@ -55,7 +55,7 @@ module.exports = {
   delay: {
     // 延後間格時間 (秒)
     optional: true,
-    type: 'string',
+    type: 'custom',
     pattern: /^[\d]{1,4}$/,
     min: 5,
     max: 1800,
