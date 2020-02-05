@@ -1,7 +1,6 @@
 const NotificationCardType = require('./constants/notification-card-type');
 const NotificationEmailAttachmentType = require('./constants/notification-email-attachment-type');
 const NotificationFaceRecognitionCondition = require('./constants/notification-face-recognition-condition');
-const NotificationTimeType = require('./constants/notification-time-type');
 
 module.exports = {
   type: {
@@ -22,12 +21,9 @@ module.exports = {
     // 是否置頂
     type: 'boolean'
   },
-  timeType: {
+  isEnableTime: {
     // 通知時間是否啟用（開啟：自訂，關閉：永遠通知）
-    optional: false,
-    type: 'string',
-    empty: false,
-    enum: NotificationTimeType.all()
+    type: 'boolean'
   },
   timePeriods: {
     // 自訂通知時間
