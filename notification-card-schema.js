@@ -37,13 +37,43 @@ module.exports = {
       props: {
         start: {
           optional: false,
-          type: 'number',
-          integer: true
+          type: 'custom',
+          check: function (value, schema) {
+            if (schema.optional && (value == null || value === '')) {
+              return true;
+            }
+
+            if (typeof value !== 'string') {
+              return this.makeError('string', null, value);
+            }
+
+            const date = new Date(value);
+            if (isNaN(date.getTime())) {
+              return this.makeError('date', null, value);
+            }
+
+            return true;
+          }
         },
         end: {
           optional: false,
-          type: 'number',
-          integer: true
+          type: 'custom',
+          check: function (value, schema) {
+            if (schema.optional && (value == null || value === '')) {
+              return true;
+            }
+
+            if (typeof value !== 'string') {
+              return this.makeError('string', null, value);
+            }
+
+            const date = new Date(value);
+            if (isNaN(date.getTime())) {
+              return this.makeError('date', null, value);
+            }
+
+            return true;
+          }
         },
         isRepeat: {
           type: 'boolean'
