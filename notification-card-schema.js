@@ -11,6 +11,13 @@ module.exports = {
     empty: false,
     enum: NotificationCardType.all()
   },
+  title: {
+    // 通知名稱
+    optional: false,
+    type: 'string',
+    empty: false,
+    max: 1024
+  },
   isTop: {
     // 是否置頂
     type: 'boolean'
