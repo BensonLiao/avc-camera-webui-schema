@@ -1,4 +1,5 @@
 const AudioInputQuality = require('./constants/audio-input-quality');
+const AudioInputSource = require('./constants/audio-input-source');
 
 module.exports = {
   isEnableInput: {
@@ -21,6 +22,6 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: ['LINE IN']
+    enum: AudioInputSource.all()
   }
 };
