@@ -37,10 +37,11 @@ module.exports = {
     optional: false,
     type: 'custom',
     min: 8,
-    max: 12,
+    max: 16,
     isNeedLowerCase: true,
     isNeedUpperCase: true,
     isNeedNumber: true,
+    isAbortSpecialCharacters: true,
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
         return true;
@@ -68,6 +69,10 @@ module.exports = {
 
       if (schema.isNeedNumber && !/\d+/.test(value)) {
         return this.makeError('stringContainsNumber', null, value);
+      }
+
+      if (schema.isAbortSpecialCharacters && /[#%&`“\\<>]/.test(value)) {
+        return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
       return true;
