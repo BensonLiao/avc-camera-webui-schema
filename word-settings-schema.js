@@ -1,6 +1,7 @@
 const WordColor = require('./constants/word-color');
 const WordFontSize = require('./constants/word-font-size');
 const WordPosition = require('./constants/word-position');
+const WordType = require('./constants/word-type');
 
 module.exports = {
   isEnable: {
@@ -23,5 +24,11 @@ module.exports = {
     type: 'string',
     empty: false,
     enum: WordPosition.all()
+  },
+  type: {
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: WordType.all()
   }
 };
