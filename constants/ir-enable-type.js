@@ -1,7 +1,7 @@
 module.exports = {
-  auto: 'Auto',
-  on: 'On',
-  off: 'Off',
+  auto: '0',
+  on: '1',
+  off: '2',
   all() {
     return [this.auto, this.on, this.off];
   }
