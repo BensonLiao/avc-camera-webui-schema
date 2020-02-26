@@ -34,6 +34,7 @@ module.exports = {
   customText: {
     optional: false,
     type: 'string',
-    empty: true
+    empty: true,
+    max: 32
   }
 };
