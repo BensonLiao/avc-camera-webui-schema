@@ -12,17 +12,9 @@ module.exports = {
   },
   irEnabled: {
     // 紅外線燈
-    empty: false,
-    enum: ['auto', 'true', 'false']
+    type: 'boolean'
   },
-  irBrightness: {
-    // 紅外線燈功率
-    optional: true,
-    type: 'number',
-    min: 1,
-    max: 255,
-    integer: true
-  },
+
   brightness: {
     // 亮度
     optional: false,
