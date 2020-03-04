@@ -1,8 +1,6 @@
+const FocusType = require('./constants/focus-type');
+
 module.exports = {
-  isAutoFocus: {
-    // 自動對焦
-    type: 'boolean'
-  },
   focalLength: {
     // 焦距
     optional: false,
@@ -16,5 +14,14 @@ module.exports = {
     type: 'number',
     min: 1,
     max: 2.3
+  },
+  focusType: {
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: FocusType.all()
+  },
+  isAutoFocusAfterZoom: {
+    type: 'boolean'
   }
 };
