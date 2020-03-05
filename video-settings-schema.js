@@ -1,3 +1,4 @@
+const IREnableType = require('./constants/ir-enable-type');
 const ShutterSpeed = require('./constants/shutter-speed');
 const ApertureType = require('./constants/aperture-type');
 const WhiteBalanceType = require('./constants/white-balance-type');
@@ -13,7 +14,7 @@ module.exports = {
   irEnabled: {
     // 紅外線燈
     empty: false,
-    enum: ['auto', 'true', 'false']
+    enum: IREnableType.all()
   },
   irBrightness: {
     // 紅外線燈功率
