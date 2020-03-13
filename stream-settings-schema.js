@@ -1,8 +1,5 @@
 const StreamFormat = require('./constants/stream-format');
 const StreamResolution = require('./constants/stream-resolution');
-const StreamVBRBitRateLevel = require('./constants/stream-vbr-bit-rate-level');
-const StreamVBRMaxBitRate = require('./constants/stream-vbr-max-bit-rate');
-const StreamCBRBitRate = require('./constants/stream-cbr-bit-rate');
 const StreamGOV = require('./constants/stream-gov');
 const StreamBandwidthManagement = require('./constants/stream-bandwidth-management');
 
@@ -50,35 +47,65 @@ const settingsSchema = {
       return true;
     }
   },
-  vbrBitRateLevel: {
+  bandwidthManagement: {
     optional: false,
     type: 'string',
     empty: false,
-    enum: StreamVBRBitRateLevel.all()
+    enum: StreamBandwidthManagement.all()
   },
-  vbrMaxBitRate: {
+  maximumBitrate: {
+    // Default: H265=4096 Kbps
     optional: false,
-    type: 'string',
-    empty: false,
-    enum: StreamVBRMaxBitRate.all()
+    type: 'custom',
+    pattern: /^[\d]{4,5}$/,
+    min: 2048,
+    max: 20480,
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (!schema.pattern.test(value)) {
+        return this.makeError('stringPattern', schema.pattern, value);
+      }
+
+      const number = Number(value);
+      if (number < schema.min) {
+        return this.makeError('numberMin', schema.min, value);
+      }
+
+      if (number > schema.max) {
+        return this.makeError('numberMax', schema.max, value);
+      }
+
+      return true;
+    }
   },
-  cbrBitRate: {
-    optional: false,
-    type: 'string',
-    empty: false,
-    enum: StreamCBRBitRate.all()
+  maximumBitrateStream2: {
+    // Default: H264=1024 Kbps
+    ...this.maximumBitrate,
+    min: 256,
+    max: 4096
+  },
+  constantBitrate: {
+    // Default: H264=12288 Kbps
+    ...this.maximumBitrate
+  },
+  constantBitrateStream2: {
+    // Default: H264=1024 Kbps
+    ...this.constantBitrate,
+    min: 256,
+    max: 4096
   },
   gov: {
     optional: false,
     type: 'string',
     empty: false,
     enum: StreamGOV.all()
-  },
-  bandwidthManagement: {
-    optional: false,
-    type: 'string',
-    empty: false,
-    enum: StreamBandwidthManagement.all()
   }
 };
 
