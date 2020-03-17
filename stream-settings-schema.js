@@ -53,8 +53,7 @@ const settingsSchema = {
     empty: false,
     enum: StreamBandwidthManagement.all()
   },
-  maximumBitrate: {
-    // Default: H265=4096 Kbps
+  bitRate: {
     optional: false,
     type: 'custom',
     pattern: /^[\d]{4,5}$/,
@@ -85,19 +84,9 @@ const settingsSchema = {
       return true;
     }
   },
-  maximumBitrateStream2: {
-    // Default: H264=1024 Kbps
-    ...this.maximumBitrate,
-    min: 256,
-    max: 4096
-  },
-  constantBitrate: {
-    // Default: H264=12288 Kbps
-    ...this.maximumBitrate
-  },
-  constantBitrateStream2: {
-    // Default: H264=1024 Kbps
-    ...this.constantBitrate,
+  bitRateStream2: {
+    ...this.bitRate,
+    optional: true,
     min: 256,
     max: 4096
   },
