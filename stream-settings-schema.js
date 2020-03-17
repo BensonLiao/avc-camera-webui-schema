@@ -84,12 +84,6 @@ const settingsSchema = {
       return true;
     }
   },
-  bitRateStream2: {
-    ...this.bitRate,
-    optional: true,
-    min: 256,
-    max: 4096
-  },
   gov: {
     optional: false,
     type: 'string',
