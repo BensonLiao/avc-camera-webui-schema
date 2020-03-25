@@ -1,7 +1,7 @@
 const NotificationCardType = require('./constants/notification-card-type');
 const NotificationEmailAttachmentType = require('./constants/notification-email-attachment-type');
 const NotificationFaceRecognitionCondition = require('./constants/notification-face-recognition-condition');
-const NotificationFaceRecognitionEvent = require('./constants/notification-face-recognition-event');
+const NotificationFaceRecognitionVMSEvent = require('./constants/notification-face-recognition-vms-event');
 
 module.exports = {
   type: {
@@ -144,14 +144,14 @@ module.exports = {
     empty: false,
     enum: NotificationFaceRecognitionCondition.all()
   },
-  isEnableSendToVMS: {
+  isEnableVMS: {
     type: 'boolean'
   },
-  faceRecognitionEvent: {
+  faceRecognitionVMSEvent: {
     // 辨識通知條件
     optional: true,
     type: 'string',
     empty: false,
-    enum: NotificationFaceRecognitionEvent.all()
+    enum: NotificationFaceRecognitionVMSEvent.all()
   }
 };
