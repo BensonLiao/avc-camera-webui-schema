@@ -32,6 +32,6 @@ module.exports = {
   pohnpei: 'Pacific/Pohnpei', // (GMT+11:00)
   auckland: 'Pacific/Auckland', // (GMT+12:00)
   all() {
-    return [this.time, this.timeRate];
+    return [this.majuro, this.midway, this.honolulu, this.anchorage, this.tijuana, this.chihuahua, this.chicago, this.bogota, this.barbados, this.stJohns, this.buenosAires, this.southGeorgia, this.azores, this.utc, this.windhoek, this.cairo, this.minsk, this.tehran, this.dubai, this.kabul, this.oral, this.colombo, this.katmandu, this.almaty, this.rangoon, this.bangkok, this.taipei, this.tokyo, this.adelaide, this.brisbane, this.pohnpei, this.auckland];
   }
 };
