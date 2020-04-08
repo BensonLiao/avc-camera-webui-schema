@@ -6,10 +6,6 @@ module.exports = {
     // 聲音
     type: 'boolean'
   },
-  isEnableOutput: {
-    // 聲音輸出
-    type: 'boolean'
-  },
   inputQuality: {
     // 聲音品質
     optional: false,
