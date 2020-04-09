@@ -1,7 +1,7 @@
 const SyncTimeOption = require('./constants/system-sync-time');
 const NTPTimeZone = require('./constants/system-sync-time-ntp-timezone');
 const NTPTimeOption = require('./constants/system-sync-time-ntp-option');
-const NTPTimeRateOption = require('./constants/system-sync-time-ntp-rate');
+const NTPUpdateTimeRateOption = require('./constants/system-sync-time-ntp-rate');
 
 module.exports = {
   syncTimeOption: {
@@ -32,11 +32,51 @@ module.exports = {
     empty: false,
     enum: NTPTimeOption.all()
   },
-  ntpTimeRateOption: {
+  ntpUpdateTime: {
+    optional: false,
+    type: 'custom',
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      const date = new Date(value);
+      if (isNaN(date.getTime())) {
+        return this.makeError('date', null, value);
+      }
+
+      return true;
+    }
+  },
+  ntpUpdateTimeRate: {
     // NTP時間同步頻率選項
     optional: false,
     type: 'string',
     empty: false,
-    enum: NTPTimeRateOption.all()
+    enum: NTPUpdateTimeRateOption.all()
+  },
+  manualTime: {
+    optional: true,
+    type: 'custom',
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      const date = new Date(value);
+      if (isNaN(date.getTime())) {
+        return this.makeError('date', null, value);
+      }
+
+      return true;
+    }
   }
 };

@@ -1,7 +1,7 @@
 module.exports = {
-  time: '0',
-  timeRate: '1',
+  updateTime: '0',
+  updateTimeRate: '1',
   all() {
-    return [this.time, this.timeRate];
+    return [this.updateTime, this.updateTimeRate];
   }
 };
