@@ -4,7 +4,7 @@ const StreamGOV = require('./constants/stream-gov');
 const StreamBandwidthManagement = require('./constants/stream-bandwidth-management');
 
 const settingsSchema = {
-  format: {
+  codec: {
     optional: false,
     type: 'string',
     empty: false,
