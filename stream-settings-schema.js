@@ -1,4 +1,4 @@
-const StreamFormat = require('./constants/stream-format');
+const StreamCodec = require('./constants/stream-codec');
 const StreamResolution = require('./constants/stream-resolution');
 const StreamGOV = require('./constants/stream-gov');
 const StreamBandwidthManagement = require('./constants/stream-bandwidth-management');
@@ -8,7 +8,7 @@ const settingsSchema = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: StreamFormat.all()
+    enum: StreamCodec.all()
   },
   resolution: {
     optional: false,
