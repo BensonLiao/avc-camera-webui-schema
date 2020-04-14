@@ -3,6 +3,6 @@ module.exports = {
   success: '1', // 成功
   unknown: '2', // 失敗、未知
   all() {
-    return [this.always, this.unknown, this.success,];
+    return [this.always, this.unknown, this.success];
   }
 };
