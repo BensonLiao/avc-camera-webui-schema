@@ -1,4 +1,8 @@
 module.exports = {
+  isAutoFocus: {
+    // 自動對焦
+    type: 'boolean'
+  },
   focalLength: {
     // 焦距
     optional: false,
