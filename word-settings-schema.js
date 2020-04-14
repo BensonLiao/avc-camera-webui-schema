@@ -30,5 +30,11 @@ module.exports = {
     type: 'string',
     empty: false,
     enum: WordType.all()
+  },
+  customText: {
+    optional: false,
+    type: 'string',
+    empty: true,
+    max: 32
   }
 };
