@@ -42,6 +42,8 @@ module.exports = {
     isNeedUpperCase: true,
     isNeedNumber: true,
     isAbortSpecialCharacters: true,
+    isAcceptSpecialCharacters: true,
+
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
         return true;
@@ -73,6 +75,10 @@ module.exports = {
 
       if (schema.isAbortSpecialCharacters && /[#%&`“\\<> ]/.test(value)) {
         return this.makeError('stringAbortSpecialCharacters', null, value);
+      }
+
+      if (schema.isAcceptSpecialCharacters && !/[#%&`“\\<> ]/.test(value)) {
+        return this.makeError('stringAcceptSpecialCharacters', null, value);
       }
 
       return true;
