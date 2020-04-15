@@ -73,7 +73,7 @@ module.exports = {
         return this.makeError('stringContainsNumber', null, value);
       }
 
-      if (schema.isAcceptSpecialCharacters && !/[!\$'\(\)\*\+,\.\/:;=\?@\[\]\^_\{\|\}~-]+/.test(value)) {
+      if (schema.isAcceptSpecialCharacters && !/[!$'()*+,./:;=?@[\]^_{|}~-]+/.test(value)) {
         return this.makeError('stringAcceptSpecialCharacters', null, value);
       }
 
