@@ -77,7 +77,7 @@ module.exports = {
         return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
-      if (schema.isAcceptSpecialCharacters && !/[!\$'\(\)\*\+,\./:;=\?@\[\]\^_\{\|\}~-]/.test(value)) {
+      if (schema.isAcceptSpecialCharacters && !/[!\$'\(\)\*\+,\./:;=\?@\[\]\^_\{\|\}~-]+/.test(value)) {
         return this.makeError('stringAcceptSpecialCharacters', null, value);
       }
 
