@@ -73,12 +73,12 @@ module.exports = {
         return this.makeError('stringContainsNumber', null, value);
       }
 
-      if (schema.isAbortSpecialCharacters && /[#%&`“\\<> ]/.test(value)) {
-        return this.makeError('stringAbortSpecialCharacters', null, value);
+      if (schema.isAcceptSpecialCharacters && !/[!\$'\(\)\*\+,\.\/:;=\?@\[\]\^_\{\|\}~-]+/.test(value)) {
+        return this.makeError('stringAcceptSpecialCharacters', null, value);
       }
 
-      if (schema.isAcceptSpecialCharacters && !/[!\$'\(\)\*\+,\./:;=\?@\[\]\^_\{\|\}~-]+/.test(value)) {
-        return this.makeError('stringAcceptSpecialCharacters', null, value);
+      if (schema.isAbortSpecialCharacters && /[#%&`“\\<> ]/.test(value)) {
+        return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
       return true;
