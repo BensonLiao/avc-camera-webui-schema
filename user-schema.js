@@ -38,6 +38,7 @@ module.exports = {
     type: 'custom',
     min: 8,
     max: 16,
+    isNeedMinMax: true,
     isNeedLowerCase: true,
     isNeedUpperCase: true,
     isNeedNumber: true,
@@ -53,11 +54,11 @@ module.exports = {
         return this.makeError('string', null, value);
       }
 
-      if (value.length < schema.min) {
+      if (schema.isNeedMinMax && (value.length < schema.min)) {
         return this.makeError('stringMin', schema.min, value);
       }
 
-      if (value.length > schema.max) {
+      if (schema.isNeedMinMax && (value.length > schema.max)) {
         return this.makeError('stringMax', schema.max, value);
       }
 
