@@ -50,6 +50,10 @@ module.exports = {
         return true;
       }
 
+      if (value.length === 0) {
+        return this.makeError('required', null, value);
+      }
+
       if (typeof value !== 'string') {
         return this.makeError('string', null, value);
       }
