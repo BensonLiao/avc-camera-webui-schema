@@ -89,6 +89,10 @@ const settingsSchema = {
     type: 'string',
     empty: false,
     enum: StreamGOV.all()
+  },
+  quality: {
+    optional: true,
+    type: 'string'
   }
 };
 
