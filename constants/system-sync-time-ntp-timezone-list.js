@@ -43,7 +43,7 @@ module.exports = {
   coordinatedUniversalTimeMinus02: 'Etc/GMT+2',
   azores: 'Atlantic/Azores',
   caboVerdeIsland: 'Atlantic/Cape_Verde',
-  natedUniversalTime: 'UTC',
+  utc: 'UTC',
   dublin: 'Europe/London',
   monrovia: 'Atlantic/Reykjavik',
   saoTome: 'Africa/Sao_Tome',
