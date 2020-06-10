@@ -182,7 +182,7 @@ module.exports = {
       this.coordinatedUniversalTimeMinus02,
       this.azores,
       this.caboVerdeIsland,
-      this.natedUniversalTime,
+      this.utc,
       this.dublin,
       this.monrovia,
       this.saoTome,
