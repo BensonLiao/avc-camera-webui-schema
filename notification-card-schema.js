@@ -106,7 +106,7 @@ module.exports = {
     type: 'array',
     empty: true,
     min: 0,
-    max: 5,
+    max: 64,
     items: {
       optional: false,
       type: 'string',
