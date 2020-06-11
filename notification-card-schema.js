@@ -120,6 +120,14 @@ module.exports = {
     empty: false,
     enum: NotificationEmailAttachmentType.all()
   },
+  senderSubject: {
+    optional: true,
+    type: 'string'
+  },
+  senderContent: {
+    optional: true,
+    type: 'string'
+  },
   groups: {
     optional: false,
     type: 'array',
