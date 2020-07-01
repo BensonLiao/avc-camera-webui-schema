@@ -11,7 +11,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 16
+    max: 32
   },
   birthday: {
     optional: false,

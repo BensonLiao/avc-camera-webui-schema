@@ -15,7 +15,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 32
   },
   isTop: {
     // 是否置頂
@@ -122,11 +122,15 @@ module.exports = {
   },
   senderSubject: {
     optional: true,
-    type: 'string'
+    type: 'string',
+    min: 1,
+    max: 256
   },
   senderContent: {
     optional: true,
-    type: 'string'
+    type: 'string',
+    min: 1,
+    max: 256
   },
   groups: {
     optional: false,
