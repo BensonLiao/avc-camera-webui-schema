@@ -122,11 +122,15 @@ module.exports = {
   },
   senderSubject: {
     optional: true,
-    type: 'string'
+    type: 'string',
+    min: 1,
+    max: 256
   },
   senderContent: {
     optional: true,
-    type: 'string'
+    type: 'string',
+    min: 1,
+    max: 256
   },
   groups: {
     optional: false,
