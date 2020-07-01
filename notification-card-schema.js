@@ -15,7 +15,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 1024
+    max: 32
   },
   isTop: {
     // 是否置頂

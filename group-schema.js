@@ -9,12 +9,12 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 16
+    max: 32
   },
   note: {
     optional: true,
     type: 'string',
     empty: true,
-    max: 1024
+    max: 256
   }
 };
