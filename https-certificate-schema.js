@@ -53,7 +53,7 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    max: 10240
+    max: 20480
   },
 
   country: {
