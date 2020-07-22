@@ -57,7 +57,7 @@ module.exports = {
     optional: true,
     type: 'custom',
     pattern: /^[\d]{1,4}$/,
-    min: 5,
+    min: 1,
     max: 1800,
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
