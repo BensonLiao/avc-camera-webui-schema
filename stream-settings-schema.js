@@ -56,9 +56,9 @@ const settingsSchema = {
   bitRate: {
     optional: false,
     type: 'custom',
-    pattern: /^[\d]{4,5}$/,
-    min: 2048,
-    max: 20480,
+    pattern: /^[\d]{1,5}$/,
+    min: 1,
+    max: 65536,
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
         return true;
