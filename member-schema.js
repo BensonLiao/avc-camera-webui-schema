@@ -34,7 +34,7 @@ module.exports = {
     type: 'array',
     empty: false,
     min: 1,
-    max: 1,
+    max: 5,
     items: {
       optional: false,
       type: 'string',
