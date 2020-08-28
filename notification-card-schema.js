@@ -123,13 +123,13 @@ module.exports = {
   senderSubject: {
     optional: true,
     type: 'string',
-    min: 1,
+    min: 0,
     max: 256
   },
   senderContent: {
     optional: true,
     type: 'string',
-    min: 1,
+    min: 0,
     max: 256
   },
   groups: {
