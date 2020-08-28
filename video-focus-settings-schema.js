@@ -8,7 +8,7 @@ module.exports = {
     optional: false,
     type: 'number',
     min: 0,
-    max: 10,
+    max: 1008,
     integer: true
   },
   zoom: {
