@@ -1,6 +1,7 @@
 const NotificationCardType = require('./constants/notification-card-type');
 const NotificationEmailAttachmentType = require('./constants/notification-email-attachment-type');
 const NotificationFaceRecognitionCondition = require('./constants/notification-face-recognition-condition');
+const NotificationEmailContentPosition = require('./constants/notification-email-content-position');
 
 module.exports = {
   type: {
@@ -131,6 +132,12 @@ module.exports = {
     type: 'string',
     min: 0,
     max: 256
+  },
+  emailContentPosition: {
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: NotificationEmailContentPosition.all()
   },
   groups: {
     optional: false,
