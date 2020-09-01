@@ -5,4 +5,3 @@ module.exports = {
     return [this.emailHead, this.emailTail];
   }
 };
-  
