@@ -9,9 +9,39 @@ module.exports = {
   },
   account: {
     optional: false,
-    type: 'string',
+    type: 'custom',
     empty: false,
-    max: 32
+    min: 1,
+    max: 32,
+    isNeedMinMax: true,
+    isAbortSpecialCharacters: true,
+    check: function (value, schema) {
+      if (schema.optional && (value == null || value === '')) {
+        return true;
+      }
+
+      if (typeof value !== 'string') {
+        return this.makeError('string', null, value);
+      }
+
+      if (schema.empty === false && !value.length) {
+        return this.makeError('stringEmpty', null, value);
+      }
+
+      if (schema.isNeedMinMax && (value.length < schema.min)) {
+        return this.makeError('stringMin', schema.min, value);
+      }
+
+      if (schema.isNeedMinMax && (value.length > schema.max)) {
+        return this.makeError('stringMax', schema.max, value);
+      }
+
+      if (schema.isAbortSpecialCharacters && /[#%&`"\\\u00b7\u300a\u300b<>\u201c\u201d\u3001\u0020\u3000]/.test(value)) {
+        return this.makeError('stringAbortSpecialCharacters', null, value);
+      }
+
+      return true;
+    }
   },
   birthday: {
     optional: false,
@@ -78,7 +108,7 @@ module.exports = {
         return this.makeError('stringContainsNumber', null, value);
       }
 
-      if (schema.isAbortSpecialCharacters && /[#%&`“\\<> ]/.test(value)) {
+      if (schema.isAbortSpecialCharacters && /[#%&`"\\\u00b7\u300a\u300b<>\u201c\u201d\u3001\u0020\u3000]/.test(value)) {
         return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
