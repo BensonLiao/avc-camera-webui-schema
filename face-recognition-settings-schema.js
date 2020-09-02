@@ -5,6 +5,10 @@ module.exports = {
     // 辨識功能
     type: 'boolean'
   },
+  isEnableSpoofing: {
+    // 防偽功能
+    type: 'boolean'
+  },
   confidenceLevel: {
     // 相似度層級
     optional: false,
@@ -22,6 +26,10 @@ module.exports = {
   },
   isShowUnknown: {
     // 顯示 "Unknown"
+    type: 'boolean'
+  },
+  isShowFake: {
+    // 顯示 "Fake"
     type: 'boolean'
   },
   triggerArea: {
