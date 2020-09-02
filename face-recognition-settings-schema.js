@@ -28,6 +28,10 @@ module.exports = {
     // 顯示 "Unknown"
     type: 'boolean'
   },
+  isShowFake: {
+    // 顯示 "Fake"
+    type: 'boolean'
+  },
   triggerArea: {
     // 觸發區域
     type: 'object',
