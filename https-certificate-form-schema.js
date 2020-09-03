@@ -81,9 +81,11 @@ module.exports.generated = {
       if (schema.optional && (value == null || value === '')) {
         return true;
       }
+
       if (typeof value !== 'string') {
         return this.makeError('string', null, value);
       }
+
       if (!schema.pattern.test(value)) {
         return this.makeError('countryCode', schema.pattern, value);
       }
@@ -123,9 +125,11 @@ module.exports.generated = {
       if (schema.optional && (value == null || value === '')) {
         return true;
       }
+
       if (typeof value !== 'string') {
         return this.makeError('string', null, value);
       }
+
       if (value.length > schema.max) {
         return this.makeError('stringMax', schema.max, value);
       }
