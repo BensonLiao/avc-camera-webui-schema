@@ -1,3 +1,5 @@
+/* eslint-disable no-irregular-whitespace */
+/* eslint-disable no-control-regex */
 const UserPermission = require('./constants/user-permission');
 
 module.exports = {
@@ -36,7 +38,7 @@ module.exports = {
         return this.makeError('stringMax', schema.max, value);
       }
 
-      if (schema.isAbortSpecialCharacters && /[#%&`"\\\u00b7\u300a\u300b<>\u201c\u201d\u3001\u0020\u3000]/.test(value)) {
+      if (schema.isAbortSpecialCharacters && (/[\u{B7}\u{300A}\u{300B}"\u{201D}#%&`\u{201C}/<>\u{3001}\\ \u{3000}]/u.test(value) || /[^\x00-\x7F]+/.test(value))) {
         return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
@@ -75,6 +77,7 @@ module.exports = {
     isAbortSpecialCharacters: true,
     isAcceptSpecialCharacters: true,
 
+    // eslint-disable-next-line complexity
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
         return true;
@@ -108,7 +111,7 @@ module.exports = {
         return this.makeError('stringContainsNumber', null, value);
       }
 
-      if (schema.isAbortSpecialCharacters && /[#%&`"\\\u00b7\u300a\u300b<>\u201c\u201d\u3001\u0020\u3000]/.test(value)) {
+      if (schema.isAbortSpecialCharacters && (/[\u{B7}\u{300A}\u{300B}"\u{201D}#%&`\u{201C}/<>\u{3001}\\ \u{3000}]/u.test(value) || /[^\x00-\x7F]+/.test(value))) {
         return this.makeError('stringAbortSpecialCharacters', null, value);
       }
 
