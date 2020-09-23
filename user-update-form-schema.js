@@ -103,26 +103,6 @@ module.exports = {
       return true;
     }
   },
-  birthday: {
-    optional: false,
-    type: 'custom',
-    pattern: /^\d{4}[0-1]\d[0-3]\d$/,
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      if (!schema.pattern.test(value)) {
-        return this.makeError('birthday', schema.pattern, value);
-      }
-
-      return true;
-    }
-  },
   password: password,
   newPassword: password
 };
