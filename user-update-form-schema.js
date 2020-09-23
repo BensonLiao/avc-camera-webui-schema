@@ -45,7 +45,7 @@ module.exports = {
       return true;
     }
   },
-  password: {
+  newPassword: {
     optional: false,
     type: 'custom',
     min: 8,
