@@ -1,4 +1,3 @@
-/* eslint-disable no-irregular-whitespace */
 /* eslint-disable no-control-regex */
 const UserPermission = require('./constants/user-permission');
 
@@ -40,26 +39,6 @@ module.exports = {
 
       if (schema.isAbortSpecialCharacters && (/[\u{B7}\u{300A}\u{300B}"\u{201D}#%&`\u{201C}/<>\u{3001}\\ \u{3000}]/u.test(value) || /[^\x00-\x7F]+/.test(value))) {
         return this.makeError('stringAbortSpecialCharacters', null, value);
-      }
-
-      return true;
-    }
-  },
-  birthday: {
-    optional: false,
-    type: 'custom',
-    pattern: /^\d{4}[0-1]\d[0-3]\d$/,
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      if (!schema.pattern.test(value)) {
-        return this.makeError('birthday', schema.pattern, value);
       }
 
       return true;
