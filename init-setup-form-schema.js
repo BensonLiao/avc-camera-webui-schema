@@ -6,8 +6,12 @@ const language = require('./constants/i18n-supported-code');
 
 module.exports = {
   account: {
-    account: account,
-    password: password
+    type: 'object',
+    strict: true,
+    props: {
+      account: account,
+      password: password
+    }
   },
   language: {
     optional: false,
