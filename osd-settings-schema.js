@@ -1,7 +1,7 @@
-const WordColor = require('./constants/word-color');
-const WordFontSize = require('./constants/word-font-size');
-const WordPosition = require('./constants/word-position');
-const WordType = require('./constants/word-type');
+const OsdColor = require('./constants/osd-color');
+const OsdFontSize = require('./constants/osd-font-size');
+const OsdPosition = require('./constants/osd-position');
+const OsdType = require('./constants/osd-type');
 
 module.exports = {
   isEnable: {
@@ -11,25 +11,25 @@ module.exports = {
     optional: false,
     type: 'string',
     empty: false,
-    enum: WordFontSize.all()
+    enum: OsdFontSize.all()
   },
   color: {
     optional: false,
     type: 'string',
     empty: false,
-    enum: WordColor.all()
+    enum: OsdColor.all()
   },
   position: {
     optional: false,
     type: 'string',
     empty: false,
-    enum: WordPosition.all()
+    enum: OsdPosition.all()
   },
   type: {
     optional: false,
     type: 'string',
     empty: false,
-    enum: WordType.all()
+    enum: OsdType.all()
   },
   customText: {
     optional: false,
