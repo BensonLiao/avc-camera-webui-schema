@@ -3,7 +3,7 @@ module.exports = {
     optional: false,
     type: 'custom',
     pattern: /^[\d]{1,5}$/,
-    min: 1,
+    min: 1024,
     max: 65535,
     check: function (value, schema) {
       if (schema.optional && (value == null || value === '')) {
