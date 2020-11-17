@@ -8,14 +8,12 @@ module.exports = {
     // 時間同步選項
     optional: false,
     type: 'string',
-    empty: false,
     enum: SyncTimeOption.all()
   },
   ntpTimeZone: {
     // 時區選項
     optional: false,
     type: 'string',
-    empty: false,
     enum: NTPTimeZone.all()
   },
   ntpIP: {
@@ -29,54 +27,22 @@ module.exports = {
     // NTP時間同步選項
     optional: false,
     type: 'string',
-    empty: false,
     enum: NTPTimeOption.all()
   },
   ntpUpdateTime: {
     optional: false,
-    type: 'custom',
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      const date = new Date(value);
-      if (isNaN(date.getTime())) {
-        return this.makeError('date', null, value);
-      }
-
-      return true;
-    }
+    type: 'date',
+    convert: true
   },
   ntpUpdateTimeRate: {
     // NTP時間同步頻率選項
     optional: false,
     type: 'string',
-    empty: false,
     enum: NTPUpdateTimeRateOption.all()
   },
   manualTime: {
     optional: true,
-    type: 'custom',
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      const date = new Date(value);
-      if (isNaN(date.getTime())) {
-        return this.makeError('date', null, value);
-      }
-
-      return true;
-    }
+    type: 'date',
+    convert: true
   }
 };
