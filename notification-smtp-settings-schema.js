@@ -47,6 +47,7 @@ module.exports = {
     // 寄件人電子郵件
     optional: true,
     type: 'email',
+    mode: 'precise',
     empty: true,
     max: 1024
   },
