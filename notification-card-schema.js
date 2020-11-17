@@ -80,7 +80,7 @@ module.exports = {
     max: 64,
     items: {
       optional: false,
-      type: 'string',
+      type: 'email',
       empty: false,
       max: 1024
     }
