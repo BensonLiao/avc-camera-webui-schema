@@ -23,65 +23,17 @@ module.exports = {
   pulse: {
     // 訊號緩衝時間 (秒)
     optional: true,
-    type: 'custom',
-    pattern: /^[\d]{1,2}$/,
+    type: 'number',
+    convert: true,
     min: 1,
-    max: 80,
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      if (!schema.pattern.test(value)) {
-        return this.makeError('stringPattern', schema.pattern, value);
-      }
-
-      const number = Number(value);
-      if (number < schema.min) {
-        return this.makeError('numberMin', schema.min, value);
-      }
-
-      if (number > schema.max) {
-        return this.makeError('numberMax', schema.max, value);
-      }
-
-      return true;
-    }
+    max: 80
   },
   delay: {
     // 延後間格時間 (秒)
     optional: true,
-    type: 'custom',
-    pattern: /^[\d]{1,4}$/,
+    type: 'number',
+    convert: true,
     min: 1,
-    max: 1800,
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      if (!schema.pattern.test(value)) {
-        return this.makeError('stringPattern', schema.pattern, value);
-      }
-
-      const number = Number(value);
-      if (number < schema.min) {
-        return this.makeError('numberMin', schema.min, value);
-      }
-
-      if (number > schema.max) {
-        return this.makeError('numberMax', schema.max, value);
-      }
-
-      return true;
-    }
+    max: 1800
   }
 };
