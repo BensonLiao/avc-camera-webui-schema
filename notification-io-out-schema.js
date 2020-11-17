@@ -10,14 +10,12 @@ module.exports = {
     // 平常狀態
     optional: false,
     type: 'string',
-    empty: false,
     enum: IOType.all()
   },
   gateType: {
     // 輸出類型
     optional: false,
     type: 'string',
-    empty: false,
     enum: GateType.all()
   },
   pulse: {
