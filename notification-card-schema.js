@@ -38,43 +38,13 @@ module.exports = {
       props: {
         start: {
           optional: false,
-          type: 'custom',
-          check: function (value, schema) {
-            if (schema.optional && (value == null || value === '')) {
-              return true;
-            }
-
-            if (typeof value !== 'string') {
-              return this.makeError('string', null, value);
-            }
-
-            const date = new Date(value);
-            if (isNaN(date.getTime())) {
-              return this.makeError('date', null, value);
-            }
-
-            return true;
-          }
+          type: 'date',
+          convert: true
         },
         end: {
           optional: false,
-          type: 'custom',
-          check: function (value, schema) {
-            if (schema.optional && (value == null || value === '')) {
-              return true;
-            }
-
-            if (typeof value !== 'string') {
-              return this.makeError('string', null, value);
-            }
-
-            const date = new Date(value);
-            if (isNaN(date.getTime())) {
-              return this.makeError('date', null, value);
-            }
-
-            return true;
-          }
+          type: 'date',
+          convert: true
         },
         isRepeat: {
           type: 'boolean'
