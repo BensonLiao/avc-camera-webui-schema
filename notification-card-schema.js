@@ -101,7 +101,7 @@ module.exports = {
     optional: true,
     type: 'string',
     min: 0,
-    max: 256
+    max: 512
   },
   emailContentPosition: {
     optional: false,
