@@ -56,6 +56,7 @@ const settingsSchema = {
   bitRate: {
     optional: false,
     type: 'number',
+    convert: true,
     min: 1,
     max: 65536
   },
