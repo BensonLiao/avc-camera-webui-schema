@@ -6,7 +6,6 @@ module.exports = {
     // 加密
     optional: false,
     type: 'string',
-    empty: false,
     enum: SMTPEncryptionType.all()
   },
   host: {
@@ -47,41 +46,18 @@ module.exports = {
   senderEmail: {
     // 寄件人電子郵件
     optional: true,
-    type: 'string',
+    type: 'email',
+    mode: 'precise',
     empty: true,
     max: 1024
   },
   interval: {
     // 通知時間間隔 (秒)
     optional: true,
-    type: 'custom',
-    pattern: /^[\d]{1,4}$/,
+    type: 'number',
+    convert: true,
     min: 5,
-    max: 1800,
-    check: function (value, schema) {
-      if (schema.optional && (value == null || value === '')) {
-        return true;
-      }
-
-      if (typeof value !== 'string') {
-        return this.makeError('string', null, value);
-      }
-
-      if (!schema.pattern.test(value)) {
-        return this.makeError('stringPattern', schema.pattern, value);
-      }
-
-      const number = Number(value);
-      if (number < schema.min) {
-        return this.makeError('numberMin', schema.min, value);
-      }
-
-      if (number > schema.max) {
-        return this.makeError('numberMax', schema.max, value);
-      }
-
-      return true;
-    }
+    max: 1800
   },
   isEnableLoginNotification: {
     // 登入通知信
