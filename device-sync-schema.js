@@ -2,14 +2,15 @@ module.exports = {
   ip: {
     optional: false,
     type: 'string',
-    pattern: /^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/
+    pattern: /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
   },
   port: {
-    optional: false,
-    type: 'string',
-    pattern: /^[\d]{1,5}$/,
-    min: 1,
-    max: 65535
+    optional: true,
+    type: 'number',
+    min: 0,
+    max: 65535,
+    integer: true,
+    convert: true
   },
   account: {
     optional: false,
