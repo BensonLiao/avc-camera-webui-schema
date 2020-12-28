@@ -8,8 +8,11 @@ module.exports = {
   max: '0', // Until storage limitation
   ...object,
   all() {
+    let arr = [this.max];
     for (let i = 1; i <= 60; i++) {
-      return [this.max].push(this[i]);
+      arr.push(this[i]);
     }
+
+    return arr;
   }
 };
