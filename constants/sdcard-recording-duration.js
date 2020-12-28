@@ -1,3 +1,9 @@
+const object = {};
+
+for (let i = 1; i <= 60; i++) {
+  object[i] = i.toString();
+}
+
 module.exports = {
   max: '0', // Until storage limitation
   ...object,
@@ -7,7 +13,3 @@ module.exports = {
     }
   }
 };
-let object = {};
-for (let i = 1; i <= 60; i++) {
-  object[i] = i.toString();
-}
