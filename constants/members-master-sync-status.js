@@ -1,6 +1,6 @@
 module.exports = {
   syncNotStarted: 0,
-  syncing: 1,
+  syncOngoing: 1,
   all() {
     return [this.syncNotStarted, this.syncing];
   }
