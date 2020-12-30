@@ -13,15 +13,11 @@ module.exports = {
     optional: true,
     type: 'custom',
     check: function (value) {
-      const plus = /\+/g;
+      const comma = /,/g;
       const space = /\s/g;
 
-      if (((value.match(plus) || []).length > 3) || (value.match(space) || []).length > 3) {
+      if (((value.match(comma) || []).length > 3) || (value.match(space) || []).length > 3) {
         return this.makeError('maxOperators', null, value);
-      }
-
-      if (value.match(plus) && value.match(space)) {
-        return this.makeError('mixOperators', null, value);
       }
 
       return true;
