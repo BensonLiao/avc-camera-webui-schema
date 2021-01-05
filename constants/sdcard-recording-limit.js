@@ -1,6 +1,6 @@
 module.exports = {
-  override: true, // Disconnection recording
-  stop: false, // Event recording
+  override: '0', // Disconnection recording
+  stop: '1', // Event recording
   all() {
     return [this.override, this.stop];
   }
