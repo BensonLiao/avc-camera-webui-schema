@@ -1,8 +1,8 @@
 module.exports = {
-  override: '0', // Override oldest recording
-  stop: '1', // Stop recording
+  stop: '0', // Stop recording
+  override: '1', // Override oldest recording
   all() {
-    return [this.override, this.stop];
+    return [this.stop, this.override];
   }
 };
 
