@@ -6,14 +6,18 @@ module.exports = {
   exportFail: 4,
   unzipFail: 5,
   wrongPassword: 6,
+  syncCancel: 7,
   all() {
-    return [this.syncNotStarted,
+    return [
+      this.syncNotStarted,
       this.syncOngoing,
       this.syncFinished,
       this.syncAbnormal,
       this.exportFail,
       this.unzipFail,
-      this.wrongPassword];
+      this.wrongPassword,
+      this.syncCancel
+    ];
   }
 };
 
