@@ -17,7 +17,8 @@ module.exports = {
       this.exportFail,
       this.unzipFail,
       this.wrongPassword,
-      this.syncCancel
+      this.syncCancel,
+      this.overLimit
     ];
   }
 };
