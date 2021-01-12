@@ -7,6 +7,7 @@ module.exports = {
   unzipFail: 5,
   wrongPassword: 6,
   syncCancel: 7,
+  overLimit: 8,
   all() {
     return [
       this.syncNotStarted,
