@@ -2,6 +2,7 @@ const NotificationCardType = require('./constants/notification-card-type');
 const NotificationEmailAttachmentType = require('./constants/notification-email-attachment-type');
 const NotificationFaceRecognitionCondition = require('./constants/notification-face-recognition-condition');
 const NotificationEmailContentPosition = require('./constants/notification-email-content-position');
+const NotificationHdOption = require('./constants/notification-hd-option');
 
 module.exports = {
   type: {
@@ -23,8 +24,45 @@ module.exports = {
     type: 'boolean'
   },
   isEnableTime: {
-    // 通知時間是否啟用（開啟：自訂，關閉：永遠通知）
+    // 通知時間類型（0：永遠通知，1：自訂）
     type: 'boolean'
+  },
+  isEnableSchedule: {
+    type: 'boolean'
+  },
+  selectedDay: {
+    optional: false,
+    type: 'object',
+    props: {
+      monday: {
+        optional: false,
+        type: 'boolean'
+      },
+      tuesday: {
+        optional: false,
+        type: 'boolean'
+      },
+      wednesday: {
+        optional: false,
+        type: 'boolean'
+      },
+      thursday: {
+        optional: false,
+        type: 'boolean'
+      },
+      friday: {
+        optional: false,
+        type: 'boolean'
+      },
+      saturday: {
+        optional: false,
+        type: 'boolean'
+      },
+      sunday: {
+        optional: false,
+        type: 'boolean'
+      }
+    }
   },
   timePeriods: {
     // 自訂通知時間
@@ -45,9 +83,6 @@ module.exports = {
           optional: false,
           type: 'date',
           convert: true
-        },
-        isRepeat: {
-          type: 'boolean'
         }
       }
     }
@@ -131,5 +166,26 @@ module.exports = {
     type: 'string',
     empty: false,
     enum: NotificationFaceRecognitionCondition.all()
+  },
+
+  // Human Detection
+  hdIntrusionAreaId: {
+    type: 'string',
+    empty: false
+  },
+  hdEnabled: {
+    optional: false,
+    type: 'boolean'
+  },
+  hdOption: {
+    optional: false,
+    type: 'string',
+    empty: false,
+    enum: NotificationHdOption.all()
+  },
+  hdCapacity: {
+    optional: false,
+    type: 'number',
+    min: 1
   }
 };
